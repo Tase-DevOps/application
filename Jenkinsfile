@@ -2,6 +2,7 @@
 
 pipeline {
     agent any
+    triggers { pollSCM('* * * * *') } // poll continuous SCM for trigger 
 
     stages {
         stage('Prepare Environment') {
