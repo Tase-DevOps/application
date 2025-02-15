@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('Prepare Environment') {
             steps {
+                checkout scm
                 echo 'Hello World'
+                prepareEnv script: this, action: 'get', job_parameter: 'git_committer'
             }
         }
         stage('Build'){
